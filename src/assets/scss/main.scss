@@ -1,0 +1,8 @@
+@import '_header.scss';
+@import '_sidebar.scss';
+@import '_variables.scss';
+@import '_content.scss';
+
+html, body, .main {
+  background-color: $bg-color;
+}
