@@ -8,5 +8,14 @@
   border-bottom: solid 1px #cdcdcd;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 1rem;
+}
+.header.resize {
+  margin-left: $sidebar-width-resize;
+}
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }

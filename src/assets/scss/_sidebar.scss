@@ -7,13 +7,37 @@
   height: 100vh;
   top: 0;
   left: 0;
+  color: white;
+}
+.sidebar.resize {
+  width: $sidebar-width-resize;
 }
 .sidebar__logo {
-  color: white;
+  font-weight: 600;
   height: $header-height;
   background-color: #212730;
   display: flex;
   align-items: center;
+  text-transform: uppercase;
   padding: 0 1rem;
   justify-content: space-between;
+}
+
+.sidebar__profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  img {
+    width: 5rem;
+    height: 5rem;
+    background-color: gray;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+  }
+  .sidebar__profile__title {
+    color: gray;
+  }
 }
