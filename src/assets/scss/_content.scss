@@ -1,0 +1,7 @@
+@import '../scss/variables';
+.main {
+  margin-left: $sidebar-width;
+  @media (max-width: $screen-md) {
+    margin-left: 0
+  }
+}

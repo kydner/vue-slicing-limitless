@@ -1,29 +1,5 @@
  @import '_variables.scss';
- 
- .sidebar {
-  position: fixed;
-  background-color: $sidebar-bg;
-  width: $sidebar-width;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  color: white;
-}
-.sidebar.resize {
-  width: $sidebar-width-resize;
-}
-.sidebar__logo {
-  font-weight: 600;
-  height: $header-height;
-  background-color: #212730;
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-  padding: 0 1rem;
-  justify-content: space-between;
-}
-
-.sidebar__profile {
+ @mixin profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,4 +16,55 @@
   .sidebar__profile__title {
     color: gray;
   }
+}
+ .sidebar {
+  position: fixed;
+  background-color: $sidebar-bg;
+  width: $sidebar-width;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  color: white;
+  transition: all 0.2s ease;
+  @media (max-width: $screen-md) {
+    transform: translateX(-100%);
+  }
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.sidebar.slide {
+  transform: translateX(0);
+}
+
+.sidebar.resize {
+  width: $sidebar-width-resize;
+  .sidebar__profile__title {
+    display: none;
+  }
+  &:hover {
+    width: $sidebar-width;
+  }
+  &.resize .sidebar__profile {
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+.sidebar__logo {
+  position: sticky;
+  top: 0;
+  font-weight: 600;
+  height: $header-height;
+  background-color: #212730;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  justify-content: space-between;
+}
+
+
+.sidebar__profile {
+  @include profile;
 }

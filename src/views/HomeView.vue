@@ -1,12 +1,15 @@
 <template>
-  <div class="home">home</div>
+  <page-content title="Home - Dashboard"></page-content>
 </template>
 
 <script>
+import PageContent from "@/components/PageContent.vue";
 // @ is an alias to /src
 
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    PageContent,
+  },
 };
 </script>
